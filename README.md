@@ -17,7 +17,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Live site here](https://time-tracking-dashboard-p5gw8lhjr-sherzods-projects-990e733e.vercel.app/)
+- Live Site URL: [Live site here](https://time-tracking-dashboard-ochre-three.vercel.app/)
 
 ### Built with
 
