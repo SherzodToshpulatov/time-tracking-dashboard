@@ -5,76 +5,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Time tracking dashboard</title>
+  <link rel="stylesheet" href="./stylesheet.css">
+  <title>Time tracking dashboard</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
+<body class="bg-navy-950">
 
-  Report for
-  Jeremy Robson
+<div class="min-h-screen w-full  font-rubik p-6 grid gap-6 md:grid-cols-4 md:grid-rows-2 md:max-w-6xl md:mx-auto">
+  
+      <div class="profile bg-navy-900 rounded-2xl mb-6 overflow-hidden md:row-span-2">
+        <div class="flex gap-4 items-center bg-purple-600 rounded-2xl overflow-hidden p-6 md:flex-col md:items-start">
+          <div class="md:mb-6">
+            <img src="./images/image-jeremy.png" alt="user image" class="w-16 h-16 rounded-full border-2 border-white object-cover">
+          </div>
+          <div>
+            <p class="text-white text-xs font-thin">Report for</p>
+            <h2 class="text-white text-xl font-light md:text-5xl md:pb-10">Jeremy Robson</h2>
+          </div>
+        </div>
 
-  Daily
-  Weekly
-  Monthly
+        <div class="tabs flex justify-around py-4 text-purple-500 md:flex-col md:items-start md:p-6 md:gap-5">
+          <button data-period="daily " class="hover:text-white transition-colors cursor-pointer">Daily</button>
+          <button data-period="weekly" class="hover:text-white transition-colors cursor-pointer active">Weekly</button>
+          <button data-period="monthly" class="hover:text-white transition-colors cursor-pointer">Monthly</button>
+        </div>
+      </div>
+      
 
-  Work
-  5hrs <!-- daily -->
-  Previous - 7hrs <!-- daily -->
-  32hrs <!-- weekly -->
-  Previous - 36hrs <!-- weekly -->
-  103hrs <!-- monthly -->
-  Previous - 128hrs <!-- monthly -->
+        <div class="bg-orange-300 relative rounded-2xl mb-6 overflow-hidden">
+            <div class="absolute right-4 top-0 opacity-80">
+              <img src="./images/icon-work.svg" alt="" class="w-16 h-16" />
+            </div>
+          <div class="card bg-navy-900 rounded-t-2xl relative z-10 p-6 mt-10 md:h-full" 
+              data-daily="5" data-daily-prev="7"
+              data-weekly="32" data-weekly-prev="36"
+              data-monthly="103" data-monthly-prev="128">
+            <div class="flex justify-between items-center">
+              <h3 class="text-white text-lg font-bold">Work</h3>
+              <button class="text-purple-500 hover:text-white cursor-pointer">•••</button>
+            </div>
+            <div class="flex justify-between items-center mt-4 md:flex-col md:items-start ">
+              <p class="current text-white text-4xl font-light md:text-5xl md:pb-4"></p>
+              <p class="previous text-purple-500 text-sm"></p>
+            </div>
+          </div>
+        </div>
 
-  Play
-  1hr <!-- daily -->
-  Previous - 2hrs <!-- daily -->
-  10hrs <!-- weekly -->
-  Previous - 8hrs <!-- weekly -->
-  23hrs <!-- monthly -->
-  Previous - 29hrs <!-- monthly -->
+        <div class="bg-blue-300 relative rounded-2xl mb-6 overflow-hidden">
+            <div class="absolute right-4 top-0 opacity-80">
+              <img src="./images/icon-play.svg" alt="" class="w-16 h-16" />
+            </div>
+          <div class="card bg-navy-900 rounded-2xl relative z-10 p-6 mt-10 md:h-full"
+            data-daily="1" data-daily-prev="2"
+            data-weekly="10" data-weekly-prev="8"
+            data-monthly="23" data-monthly-prev="29">
+            <div class="flex justify-between items-center">
+              <h3 class="text-white text-lg font-bold">Play</h3>
+              <button class="text-purple-500 hover:text-white cursor-pointer">•••</button>
+            </div>
+            <div class="flex justify-between items-center mt-4 md:flex-col md:items-start">
+              <p class="current text-white text-4xl font-light md:text-5xl md:pb-4"></p>
+              <p class="previous text-purple-500 text-sm"></p>
+            </div>
+        </div>
+        </div>
 
-  Study
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 7hrs <!-- weekly -->
-  13hrs <!-- monthly -->
-  Previous - 19hrs <!-- monthly -->
+        <div class="bg-pink-400 relative rounded-2xl mb-6 overflow-hidden">
+            <div class="absolute right-4 top-0 opacity-80">
+              <img src="./images/icon-study.svg" alt="" class="w-16 h-16" />
+            </div>
+          <div class="card bg-navy-900 rounded-2xl relative z-10 p-6 mt-10 md:h-full"
+              data-daily="0" data-daily-prev="1"
+              data-weekly="4" data-weekly-prev="7"
+              data-monthly="13" data-monthly-prev="19">
+            <div class="flex justify-between items-center">
+              <h3 class="text-white text-lg font-bold">Study</h3>
+              <button class="text-purple-500 hover:text-white cursor-pointer">•••</button>
+            </div>
+            <div class="flex justify-between items-center mt-4 md:flex-col md:items-start">
+              <p class="current text-white text-4xl font-light md:text-5xl md:pb-4"></p>
+              <p class="previous text-purple-500 text-sm"></p>
+            </div>
+          </div>
+        </div>
 
-  Exercise
-  1hr <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 5hrs <!-- weekly -->
-  11hrs <!-- monthly -->
-  Previous - 18hrs <!-- monthly -->
+        <div class="bg-green-400 relative rounded-2xl mb-6 overflow-hidden">
+            <div class="absolute right-4 top-0 opacity-80">
+              <img src="./images/icon-exercise.svg" alt="" class="w-16 h-16" />
+            </div>
+          <div class="card bg-navy-900 rounded-2xl relative z-10 p-6 mt-10 md:h-full"
+              data-daily="1" data-daily-prev="1"
+              data-weekly="4" data-weekly-prev="5"
+              data-monthly="11" data-monthly-prev="18">
+            <div class="flex justify-between items-center">
+              <h3 class="text-white text-lg font-bold">Exercise</h3>
+              <button class="text-purple-500 hover:text-white cursor-pointer">•••</button>
+            </div>
+            <div class="flex justify-between items-center mt-4 md:flex-col md:items-start">
+              <p class="current text-white text-4xl font-light md:text-5xl md:pb-4"></p>
+              <p class="previous text-purple-500 text-sm"></p>
+            </div>
+          </div>
+        </div>
 
-  Social
-  1hr <!-- daily -->
-  Previous - 3hrs <!-- daily -->
-  5hrs <!-- weekly -->
-  Previous - 10hrs <!-- weekly -->
-  21hrs <!-- monthly -->
-  Previous - 23hrs <!-- monthly -->
+        <div class="bg-purple-700 relative rounded-2xl mb-6 overflow-hidden">
+            <div class="absolute right-4 top-0 opacity-80">
+              <img src="./images/icon-social.svg" alt="" class="w-16 h-16" />
+            </div>
+          <div class="card bg-navy-900 rounded-2xl relative z-10 p-6 mt-10 md:h-full"
+              data-daily="1" data-daily-prev="3"
+              data-weekly="5" data-weekly-prev="10"
+              data-monthly="21" data-monthly-prev="23">
+            <div class="flex justify-between items-center">
+              <h3 class="text-white text-lg font-bold">Social</h3>
+              <button class="text-purple-500 hover:text-white cursor-pointer">•••</button>
+            </div>
+            <div class="flex justify-between items-center mt-4 md:flex-col md:items-start">
+              <p class="current text-white text-4xl font-light md:text-5xl md:pb-4"></p>
+              <p class="previous text-purple-500 text-sm"></p>
+            </div>
+          </div>
+        </div>
 
-  Self Care
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  2hrs <!-- weekly -->
-  Previous - 2hrs <!-- weekly -->
-  7hrs <!-- monthly -->
-  Previous - 11hrs <!-- monthly -->
+        <div class="bg-yellow-300 relative rounded-2xl mb-6 overflow-hidden">
+            <div class="absolute right-4 top-0 opacity-80">
+              <img src="./images/icon-self-care.svg" alt="" class="w-16 h-16" />
+            </div>
+          <div class="card bg-navy-900 rounded-2xl relative z-10 p-6 mt-10 md:h-full"
+              data-daily="0" data-daily-prev="1"
+              data-weekly="2" data-weekly-prev="2"
+              data-monthly="7" data-monthly-prev="11">
+            <div class="flex justify-between items-center">
+              <h3 class="text-white text-lg font-bold">Self Care</h3>
+              <button class="text-purple-500 hover:text-white cursor-pointer">•••</button>
+            </div>
+            <div class="flex justify-between items-center mt-4 md:flex-col md:items-start">
+              <p class="current text-white text-4xl font-light md:text-5xl md:pb-4"></p>
+              <p class="previous text-purple-500 text-sm"></p>
+            </div>
+          </div>
+        </div>
+
+      
+  
+
+</div>
+
 
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Sherzod</a>.
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
